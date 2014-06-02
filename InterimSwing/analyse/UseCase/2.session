@@ -1,0 +1,12 @@
+window_sizes 1904 1030 170 1744 892 62
+windows_style
+diagrams
+  active  usecasediagram_ref 128002 // App
+    1744 891 100 4 0 0
+end
+show_stereotypes
+selected usecase_ref 128642 // enregistrement profil
+open
+  usecaseview_ref 128002 // useCase
+end
+end

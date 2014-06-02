@@ -1,0 +1,198 @@
+format 76
+
+subject 128002 ""
+  xyzwh 93.6496 -0.193735 2000 741 829
+usecasecanvas 128113 usecase_ref 128113 // email group
+  xyzwh 369 195.89 3005 64 32 label_xy 367 230
+end
+subject 128130 ""
+  xyzwh 1163.91 206.705 2000 31 33
+usecasecanvas 128241 usecase_ref 128241 // email personnel
+  xyzwh 370.98 259.26 3005 64 32 label_xy 357 291
+end
+classcanvas 128258 class_ref 128002 // superviseur
+  class_drawing_mode default show_context_mode default show_stereotype_properties default
+  xyz 9.44964 52.5369 2005
+end
+usecasecanvas 128369 usecase_ref 129538 // envoi email
+  xyzwh 551.18 210.74 3005 64 32 label_xy 548 246
+end
+classcanvas 128386 class_ref 128130 // demandeur
+  class_drawing_mode default show_context_mode default show_stereotype_properties default
+  xyz 6.66217 599.723 2005
+end
+usecasecanvas 128514 usecase_ref 128002 // suivre demandeurs
+  xyzwh 326.43 127.57 3005 64 32 label_xy 303 163
+end
+usecasecanvas 128642 usecase_ref 128130 // modifier profil
+  xyzwh 326.43 67.18 3005 64 32 label_xy 320 100
+end
+subject 128898 ""
+  xyzwh 170.831 1.61759 2005 662 306
+usecasecanvas 129026 usecase_ref 128130 // modifier profil
+  xyzwh 262.07 406.79 3005 64 32 label_xy 256 441
+end
+usecasecanvas 129137 usecase_ref 128369 // recherche annonce emploi
+  xyzwh 272.95 614.71 3005 64 32 label_xy 229 650
+end
+subject 129154 ""
+  xyzwh 169.224 311.543 2005 665 507
+usecasecanvas 129282 usecase_ref 128386 // postuler
+  xyzwh 268.99 518.67 3005 64 32 label_xy 280 554
+end
+usecasecanvas 129410 usecase_ref 128514 // lister preuves
+  xyzwh 264.05 688.97 3005 64 32 label_xy 257 723
+end
+usecasecanvas 129666 usecase_ref 128642 // enregistrement profil
+  xyzwh 322.47 13.71 3005 64 32 label_xy 297 44
+end
+usecasecanvas 129794 usecase_ref 128642 // enregistrement profil
+  xyzwh 268.99 326.59 3005 64 32 label_xy 242 361
+end
+usecasecanvas 129922 usecase_ref 128770 // authentification
+  xyzwh 92.76 297.87 3005 64 32 label_xy 85 332
+end
+usecasecanvas 130050 usecase_ref 128898 // telecharger preuves
+  xyzwh 611.56 702.83 3005 64 32 label_xy 592 737
+end
+usecasecanvas 130178 usecase_ref 129026 // Rappel sms de rdv
+  xyzwh 610.57 761.25 3005 64 32 label_xy 592 794
+end
+usecasecanvas 130417 usecase_ref 134897 // capture/archivage
+  xyzwh 698.69 625.6 3005 64 32 label_xy 677 659
+end
+usecasecanvas 130434 usecase_ref 129282 // calendrier rdv
+  xyzwh 259.1 758.28 3005 64 32 label_xy 252 791
+end
+usecasecanvas 130562 usecase_ref 129410 // generer Lettre de motivation
+  xyzwh 468.01 492.93 3005 64 32 label_xy 422 526
+end
+usecasecanvas 130690 usecase_ref 129538 // envoi email
+  xyzwh 469 563.23 3005 64 32 label_xy 471 594
+end
+usecasecanvas 131202 usecase_ref 130050 // telecharger Lettre de motivation
+  xyzwh 694.73 486 3005 64 32 label_xy 638 518
+end
+usecasecanvas 131330 usecase_ref 130178 // effacer Lettre de motivation
+  xyzwh 687.8 406.79 3010 64 32 label_xy 645 439
+end
+usecasecanvas 131458 usecase_ref 130306 // uploader cv
+  xyzwh 468.01 329.56 3005 64 32 label_xy 466 363
+end
+usecasecanvas 131586 usecase_ref 130434 // effacer cv
+  xyzwh 468.01 414.71 3010 64 32 label_xy 474 448
+end
+note 137730 "Voir si demandeur a effectué 
+au minimum 6 candidatures 
+pour le mois courant sinon a
+ffichage en orange"
+  xyzwh 662.998 100.364 2010 147 143
+textcanvas 139650 "partie superviseur"
+  xyzwh 704.37 11.8 2010 119 19
+textcanvas 139778 "partie demandeur"
+  xyzwh 699.42 318.75 3011 119 15
+line 128497 ---- decenter_end 126
+  from ref 128258 z 3006 to ref 128113
+line 128625 ----
+  from ref 128258 z 3006 to ref 128241
+simplerelationcanvas 128753 simplerelation_ref 128113
+  from ref 128241 z 3006 stereotype "<<extend>>" xyz 458 250 3000 to ref 128369
+end
+simplerelationcanvas 128881 simplerelation_ref 128241
+  from ref 128113 z 3006 stereotype "<<extend>>" xyz 457 219 3000 to ref 128369
+end
+simplerelationcanvas 129265 simplerelation_ref 128369
+  decenter_end 476
+  from ref 129282 z 3006 stereotype "<<extend>>" xyz 268.5 583 3000 to ref 129137
+end
+line 129393 ----
+  from ref 128386 z 3006 to ref 129137
+simplerelationcanvas 129649 simplerelation_ref 135025
+  from ref 128241 z 3006 stereotype "<<include>>" xyz 229 293 3000 to ref 129922
+end
+simplerelationcanvas 129777 simplerelation_ref 135153
+  from ref 128113 z 3006 stereotype "<<include>>" xyz 228 261 3000 to ref 129922
+end
+simplerelationcanvas 130033 simplerelation_ref 135281
+  decenter_begin 300
+  from ref 129137 z 3006 stereotype "<<include>>" xyz 179 472.5 3000 to ref 129922
+end
+simplerelationcanvas 130545 simplerelation_ref 141809
+  from ref 130690 z 3006 stereotype "<<extend>>" xyz 581 609 3000 to ref 130417
+end
+simplerelationcanvas 130673 simplerelation_ref 141937
+  from ref 130562 z 3006 stereotype "<<extend>>" xyz 582 575 3000 to ref 130417
+end
+simplerelationcanvas 130801 simplerelation_ref 142065
+  from ref 129282 z 3006 stereotype "<<include>>" xyz 367 595 3000 to point 474.24 637.61
+  line 131057 z 3006 to ref 130417
+end
+simplerelationcanvas 132098 simplerelation_ref 128002
+  from ref 128642 z 3006 stereotype "<<include>>" xyz 203 198 3000 to ref 129922
+end
+line 133250 ----
+  from ref 128258 z 3006 to ref 128642
+simplerelationcanvas 133378 simplerelation_ref 128642
+  from ref 128514 z 3006 stereotype "<<include>>" xyz 202 229 3000 to ref 129922
+end
+line 133506 ----
+  from ref 128258 z 3006 to ref 129666
+line 133634 ---- decenter_end 312
+  from ref 128258 z 3006 to ref 128514
+line 133890 ----
+  from ref 128386 z 3006 to ref 129026
+line 134018 ---- decenter_end 202
+  from ref 128386 z 3006 to ref 129794
+line 134146 ----
+  from ref 128386 z 3006 to ref 129282
+line 134274 ---- decenter_end 312
+  from ref 128386 z 3006 to ref 129410
+line 134402 ---- decenter_end 202
+  from ref 128386 z 3006 to ref 130434
+simplerelationcanvas 134530 simplerelation_ref 128770
+  from ref 129026 z 3006 stereotype "<<include>>" xyz 175 368.5 3000 to ref 129922
+end
+simplerelationcanvas 134786 simplerelation_ref 128898
+  from ref 129282 z 3006 stereotype "<<include>>" xyz 178 425.5 3000 to ref 129922
+end
+simplerelationcanvas 135042 simplerelation_ref 129154
+  from ref 130434 z 3006 stereotype "<<include>>" xyz 171 544.5 3000 to ref 129922
+end
+simplerelationcanvas 135426 simplerelation_ref 129538
+  from ref 129282 z 3006 stereotype "<<include>>" xyz 365 519 3000 to ref 130562
+end
+simplerelationcanvas 135554 simplerelation_ref 129666
+  from ref 129282 z 3006 stereotype "<<include>>" xyz 368 555 3000 to ref 130690
+end
+simplerelationcanvas 135810 simplerelation_ref 129922
+  from ref 129410 z 3006 stereotype "<<include>>" xyz 436 712 3000 to ref 130050
+end
+simplerelationcanvas 135938 simplerelation_ref 130050
+  from ref 130434 z 3006 stereotype "<<extend>>" xyz 434 775 3000 to ref 130178
+end
+simplerelationcanvas 136834 simplerelation_ref 130690
+  from ref 130562 z 3006 stereotype "<<include>>" xyz 579 503 3000 to ref 131202
+end
+simplerelationcanvas 136962 simplerelation_ref 130818
+  from ref 130562 z 3011 stereotype "<<include>>" xyz 576 463 3000 to ref 131330
+end
+simplerelationcanvas 137986 simplerelation_ref 128770
+  from ref 128642 z 3006 stereotype "<<include>>" xyz 203 198 3000 to ref 129922
+end
+simplerelationcanvas 138370 simplerelation_ref 128002
+  from ref 129026 z 3006 stereotype "<<include>>" xyz 175 368.5 3000 to ref 129922
+end
+simplerelationcanvas 139266 simplerelation_ref 137986
+  from ref 129794 z 3006 stereotype "<<include>>" xyz 365 345 3000 to ref 131458
+end
+simplerelationcanvas 139394 simplerelation_ref 138114
+  from ref 129026 z 3011 stereotype "<<include>>" xyz 361 427 3000 to ref 131586
+end
+simplerelationcanvas 139522 simplerelation_ref 138242
+  decenter_begin 842
+  decenter_end 717
+  from ref 129026 z 3006 stereotype "<<include>>" xyz 357 382 3000 to ref 131458
+end
+line 138626 -_-_
+  from ref 128514 z 3006 to ref 137730
+end

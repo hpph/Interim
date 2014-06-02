@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 06-mai-2014 5:17:18 by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.interim.model.Users" table="users" catalog="cinterim">
+        <id name="idUser" type="java.lang.Integer">
+            <column name="id_user" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="users" class="com.interim.model.Users" fetch="select">
+            <column name="id_superviseur" />
+        </many-to-one>
+        <many-to-one name="logins" class="com.interim.model.Logins" fetch="select" cascade="save-update">
+            <column name="id_login" not-null="true" />
+        </many-to-one>
+        <many-to-one name="adresses" class="com.interim.model.Adresses" fetch="select" cascade="save-update">
+            <column name="id_adresse" not-null="true" />
+        </many-to-one>
+        <property name="nom" type="string">
+            <column name="nom" length="45" not-null="true" />
+        </property>
+        <property name="prenom" type="string">
+            <column name="prenom" length="45" not-null="true" />
+        </property>
+        <property name="tel" type="string">
+            <column name="tel" length="15" not-null="true" />
+        </property>
+        <set name="rdvses" table="rdvs" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_user" not-null="true" />
+            </key>
+            <one-to-many class="com.interim.model.Rdvs" />
+        </set>
+        <set name="userACommeMetiers" table="user_a_comme_metier" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_user" not-null="true" />
+            </key>
+            <one-to-many class="com.interim.model.UserACommeMetier" />
+        </set>
+        <set name="userses" table="users" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_superviseur" />
+            </key>
+            <one-to-many class="com.interim.model.Users" />
+        </set>
+    </class>
+</hibernate-mapping>

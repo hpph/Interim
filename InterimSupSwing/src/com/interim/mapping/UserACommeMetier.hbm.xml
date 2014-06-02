@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 06-mai-2014 5:17:18 by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.interim.model.UserACommeMetier" table="user_a_comme_metier" catalog="cinterim">
+        <composite-id name="id" class="com.interim.model.UserACommeMetierId">
+            <key-property name="idUser" type="int">
+                <column name="id_user" />
+            </key-property>
+            <key-property name="idMetier" type="int">
+                <column name="id_metier" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="metiers" class="com.interim.model.Metiers" update="false" insert="false" fetch="select">
+            <column name="id_metier" not-null="true" />
+        </many-to-one>
+        <many-to-one name="users" class="com.interim.model.Users" update="false" insert="false" fetch="select">
+            <column name="id_user" not-null="true" />
+        </many-to-one>
+        <property name="cv" type="string">
+            <column name="cv" length="200" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
