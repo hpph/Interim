@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 06-mai-2014 5:17:18 by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.interim.model.Annonces" table="annonces" catalog="cinterim">
+        <id name="idAnnonce" type="java.lang.Integer">
+            <column name="id_annonce" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="metiers" class="com.interim.model.Metiers" fetch="select">
+            <column name="id_metier" not-null="true" />
+        </many-to-one>
+        <many-to-one name="contacts" class="com.interim.model.Contacts" fetch="select">
+            <column name="id_contact" not-null="true" />
+        </many-to-one>
+        <property name="secteur" type="string">
+            <column name="secteur" length="45" not-null="true" />
+        </property>
+        <property name="fonction" type="string">
+            <column name="fonction" length="45" not-null="true" />
+        </property>
+        <property name="description" type="string">
+            <column name="description" length="65535" not-null="true" />
+        </property>
+        <property name="date" type="date">
+            <column name="date" length="15" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

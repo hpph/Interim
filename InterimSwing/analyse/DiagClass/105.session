@@ -1,0 +1,11 @@
+window_sizes 1500 787 375 1125 600 82
+diagrams
+  active  classdiagram_ref 128113 // diag
+    891 504 100 4 0 0
+end
+show_stereotypes
+selected attribute_ref 128233 // tel
+open
+  class_ref 128497 // Contact
+end
+end

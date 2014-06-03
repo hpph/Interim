@@ -1,0 +1,11 @@
+window_sizes 1280 704 186 1088 589 38
+diagrams
+  active  usecasediagram_ref 128002 // App
+    1088 589 74 4 0 0
+end
+show_stereotypes
+selected 
+package_ref 129 // App
+open
+end
+end
